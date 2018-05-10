@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
+import {Jumbotron, Grid, Row, Col, Image, Button} from 'react-bootstrap';
+
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+
+
 
 import Page from './Components/Page';
 
@@ -19,15 +23,13 @@ class App extends Component {
         return (
             <Router>
             <div className="App">
-               
-                <h1>Welcome to SamePage</h1>
+               <Grid>
+                   <Jumbotron>
+                       <h2>SamePage - Sharing made sample</h2>
+                       <p>Same time + same page, for you and your friends to see and update</p>
+                   </Jumbotron>
+               </Grid>
 
-                <p className="App-intro">
-                    Share page with friends, see and edit at the same time. Changes typically are to be saved instantly.
-                </p>
-                <hr />
-
-                
                 <Switch>
                     <Route exact path="/"  component={Page} />
                     <Route path="/:puid" component={Page} />
