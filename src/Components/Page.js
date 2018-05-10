@@ -286,8 +286,8 @@ class Page extends Component {
                                 </FormGroup>{' '}
 
                                 <FormGroup >
-                                    <ControlLabel htmlFor="inputPageName">Page ID: </ControlLabel>{' '}
-                                    <FormControl id="inputPageName" value={this.state.puid} onChange={this.nameChange} placeholder="Page ID" readonly size='50'></FormControl>
+                                    <ControlLabel htmlFor="inputPageIDReadonly">Page ID: </ControlLabel>{' '}
+                                    <FormControl id="inputPageIDReadonly" value={this.state.puid} placeholder="Current Page ID" readonly size='50'></FormControl>
                                 </FormGroup>
                             </Form>
 
