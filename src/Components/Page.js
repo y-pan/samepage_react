@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import openSocket from 'socket.io-client';
-import { Jumbotron, Grid, Row, Col, Image, Button, Label, Panel, Form, FormGroup, ControlLabel, FormControl, Collapse, Badge } from 'react-bootstrap';
+import { Grid, Button, Panel, Form, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 
 import { makePage, openPage, savePage, sharePage } from '../general/pageActions';
 import { validateEmail } from '../general/util';
@@ -108,10 +108,11 @@ class Page extends Component {
             })
     }
     requestOpenPage(e) {
+        
         // console.log(e.target.dataset.trigger)
         let trigger = e.target.dataset.trigger;
         let _puid = "";
-        if (trigger === "input") { /** press ENTER */
+        if (trigger === "input") { /** press ENTER on input */
             if (e.keyCode !== 13) return;
             _puid = e.target.value.trim();
         } else {
@@ -270,6 +271,8 @@ class Page extends Component {
         return (
             <div className="Page">
                 <Grid >
+                    {/* ---------------------- create new page --------------------------*/}
+                    
                     <p className="error">{this.state.errMsg}</p>
                     <Panel>
                         <Panel.Heading>
@@ -287,7 +290,7 @@ class Page extends Component {
 
                                 <FormGroup >
                                     <ControlLabel htmlFor="inputPageIDReadonly">Page ID: </ControlLabel>{' '}
-                                    <FormControl id="inputPageIDReadonly" value={this.state.puid} placeholder="Current Page ID" readonly size='50'></FormControl>
+                                    <FormControl id="inputPageIDReadonly" value={this.state.puid} placeholder="Current Page ID" readOnly size='50'></FormControl>
                                 </FormGroup>
                             </Form>
 
@@ -299,7 +302,7 @@ class Page extends Component {
                             <Panel.Title componentClass="h3">Open Existing Page</Panel.Title>
                         </Panel.Heading>
                         <Panel.Body>
-                            <Form inline>
+                            <Form inline action="javascript:void(0);">
                                 <FormGroup>
                                     <Button data-trigger="button" onClick={this.requestOpenPage} bsStyle="success">Open Page</Button>
                                 </FormGroup>{' '}

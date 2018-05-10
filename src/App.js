@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Jumbotron, Grid, Row, Col, Image, Button} from 'react-bootstrap';
+import {Jumbotron, Grid} from 'react-bootstrap';
 
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
