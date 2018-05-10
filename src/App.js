@@ -11,9 +11,9 @@ class App extends Component {
 
     // }
 
-    state = {
-        timestamp: 'no timestamp yet'
-    };
+    // state = {
+    //     timestamp: 'no timestamp yet'
+    // };
 
     render() {
         return (
@@ -21,7 +21,7 @@ class App extends Component {
             <div className="App">
                
                 <h1>Welcome to SamePage</h1>
-
+                wlh: {window.location.href}
                 <p className="App-intro">
                     Share page with friends, see and edit at the same time. Changes typically are to be saved instantly.
                 </p>
@@ -30,7 +30,12 @@ class App extends Component {
                 
                 <Switch>
                     <Route exact path="/"  component={Page} />
+                    
+                    {/* this route not found on mobile's browser  */}
                     <Route path="/:puid" component={Page} />
+
+                    {/* workaround for mobile, where the above route doesn't work */}
+                    <Route path="*"  component={Page} />
                 </Switch>
             </div>
             </Router>
