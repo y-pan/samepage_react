@@ -335,14 +335,20 @@ class Page extends Component {
                         <Panel.Body>
                             <p className="error">{this.state.errMsg_sharePage}</p>
                             <p className="ok">{this.state.okMsg_sharePage}</p>
+                            <Form inline>
+                                <FormGroup>
+                                    <ControlLabel htmlFor="inputYourName">Your Name: </ControlLabel> {' '}
+                                    <FormControl id="inputYourName" value={this.state.yourName} onChange={this.yourNameChange} placeholder="Your name/nickname" ></FormControl>
+                                </FormGroup>{' '}
 
-                            <ControlLabel htmlFor="inputYourName">Your Name:</ControlLabel><FormControl id="inputYourName" value={this.state.yourName} onChange={this.yourNameChange} placeholder="Your name/nickname" ></FormControl>
-
-                            <ControlLabel htmlFor="inputFriendEmails">Friends' Emails:</ControlLabel><FormControl id="inputFriendEmails" onChange={this.emailsChange} value={this.state.emails} placeholder="email1@gmail.com, email2@gmail.com" ></FormControl>
-
-                            {/* <textarea onChange={this.emailsChange} value={this.state.emails} rows="3" cols="30" placeholder="Friends' emails like: email1@gmail.com,email2@gmail.com" /> */}
-                            <br />
-                            <Button onClick={this.requestSharePage} bsStyle="info">Share</Button>
+                                <FormGroup>
+                                    <ControlLabel htmlFor="inputFriendEmails">Friends' Emails: </ControlLabel>{' '}
+                                    <FormControl id="inputFriendEmails" onChange={this.emailsChange} value={this.state.emails} placeholder="email1@gmail.com, email2@gmail.com" size="40"></FormControl>
+                                </FormGroup>{' '}
+                                <FormGroup>
+                                    <Button onClick={this.requestSharePage} bsStyle="info">Share</Button>
+                                </FormGroup>
+                            </Form>
 
                         </Panel.Body>
                     </Panel>
